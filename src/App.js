@@ -143,7 +143,7 @@ function App() {
           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
             <>
               <s.TextTitle
-                className="soldout"
+                className="soldout" style={{fontFamily: "'Press Start 2P', cursive"}}
               >
                 SOLD OUT!
               </s.TextTitle>
