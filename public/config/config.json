@@ -1,6 +1,6 @@
 {
-  "CONTRACT_ADDRESS": "0xD29FB336DCa3AbD9f8c33B7e109fF66f4f9A98ac",
-  "SCAN_LINK": "https://etherscan.io/address/0xd29fb336dca3abd9f8c33b7e109ff66f4f9a98ac",
+  "CONTRACT_ADDRESS": "0xdcAF23e44639dAF29f6532da213999D737F15aa4",
+  "SCAN_LINK": "https://etherscan.io/address/0xdcAF23e44639dAF29f6532da213999D737F15aa4",
   "NETWORK": {
     "NAME": "Ethereum",
     "SYMBOL": "ETH",
@@ -8,9 +8,9 @@
   },
   "NFT_NAME": "Sskullss",
   "SYMBOL": "SK",
-  "MAX_SUPPLY": 9999,
-  "WEI_COST": 0,
-  "DISPLAY_COST": 0,
+  "MAX_SUPPLY": 3500,
+  "WEI_COST": 6000000000000000,
+  "DISPLAY_COST": 0.006,
   "GAS_LIMIT": 120000,
   "MARKETPLACE": "",
   "MARKETPLACE_LINK": "",

@@ -98,6 +98,18 @@ box-sizing: border-box;
   top: 16vh;
 }
 
+.soldout {
+  position: absolute;
+  transform: rotate(-deg);
+  font-family: 'Press Start 2P', cursive;
+  color: black;
+  opacity: 0.8;
+  cursor: pointer;
+  font-size: 1.9em;
+  left: 1vw;
+  top: 4vh;
+}
+
 @media (width: 1536px) {
   .mint{
     top: 2.7vw;
@@ -105,6 +117,10 @@ box-sizing: border-box;
   }
   #connectbtn {
     left: 11.5vw;
+  }
+  .soldout{
+    left: 1.3vw;
+    top: 7vh;
   }
 }
 
@@ -117,5 +133,10 @@ box-sizing: border-box;
   #connectbtn {
     left: 11.5vw;
     font-Size: 1.5em;
+  }
+  .soldout{
+    left: 1.6vw;
+    top: 8vh;
+    font-Size: 1.6em;
   }
 }

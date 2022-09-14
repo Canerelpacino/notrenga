@@ -39,10 +39,6 @@ function App() {
   const claimNFTs = () => {
     let cost = CONFIG.WEI_COST;
 
-    if (mintAmount > 1) {
-      cost = 2500000000000000;
-    }
-
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
     let totalGasLimit = String(gasLimit * mintAmount);
@@ -147,7 +143,7 @@ function App() {
           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
             <>
               <s.TextTitle
-                style={{ textAlign: "center", color: "#C88D27", fontFamily: "'Press Start 2P', cursive", fontSize: "5vw", marginTop: "4vw", textShadow: '3px 3px black' }}
+                className="soldout"
               >
                 SOLD OUT!
               </s.TextTitle>
