@@ -118,7 +118,18 @@ function App() {
 
   return (
     <div>
-      <Home>
+      <div style={{backgroundColor: 'black', display: 'flex', width: '100%', height: '100vh', flexDirection: 'row'}}>
+
+        <div style={{display: 'flex', height: '100%', flex: '1', alignItems: 'center', justifyContent: 'left'}}>
+          <img src="/config/images/renga1.png" style={{width: '90%', transform: 'rotate(-90deg) translate(0, -7vw)', margin: 'auto', marginLeft: 0}}></img>
+        </div>
+        <div style={{display: 'flex', height: '100%', flex: '1', alignItems: 'center'}}>
+        <img src="/config/images/renga2.png" style={{width: '90%', transform: 'rotate(-90deg) translate(0, 7vw)', margin: 'auto', marginRight: 0}}></img>
+        </div>
+
+        <div style={{position: 'absolute', width: '100%', display: 'flex', bottom: 0, justifyContent: 'center'}}>
+          <img src="/config/images/renga.png" style={{width: '30%'}}></img>
+        </div>
 
         {/*Socials*/}
         <a href="https://twitter.com/SSKULLSS_NFT" target="_blank">
@@ -170,7 +181,7 @@ function App() {
                   <s.SpacerMedium />
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
                     <btn id="roundbtn" className="round-button"
-                      style={{ fontFamily: "'Press Start 2P', cursive", color: 'black', fontSize: '2em'}}
+                      style={{ fontFamily: "'Press Start 2P', cursive", color: 'white', fontSize: '2em'}}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -218,97 +229,9 @@ function App() {
             </>
           )}
           </div>
-      </Home>
-      <Phone>
-       <div style={{display: 'flex', margin: 'auto', justifyContent: 'center'}}>
-      <div style={{display: 'flex', justifyContent: 'center', margin: 'auto'}}>
-      <img id="connectbtn2" src="/config/images/MINT.png" style={{width: '50%', cursor: 'pointer'}} onClick={(e) => {
-            e.preventDefault();
-            dispatch(connect());
-            getData();
-          }}></img>
       </div>
-           {/*Mint Section*/}
-        <div style={{marginBottom: '100%'}}>
-          {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
-            <>
-              <s.TextTitle
-                style={{ textAlign: "center", color: "#C88D27", fontFamily: "'Press Start 2P', cursive", fontSize: "5vw", marginTop: "4vw", textShadow: '3px 3px black' }}
-              >
-                SOLD OUT!
-              </s.TextTitle>
-              <s.SpacerSmall />
-            </>
-          ) : (
-            <>
-              <s.SpacerXSmall />
-              <s.SpacerSmall />
-              {blockchain.account === "" ||
-                blockchain.smartContract === null ? (
-                <s.Container ai={"center"} jc={"center"}>
-                  <s.SpacerSmall />
-
-                  {blockchain.errorMsg !== "" ? (
-                    <>
-                      <s.SpacerSmall />
-                    </>
-                  ) : null}
-                </s.Container>
-              ) : (
-                <>
-                  <div onLoad={connected()}></div>
-                  <s.SpacerMedium />
-                  <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                    <btn id="roundbtn" className="round-button"
-                      style={{ fontFamily: "'Press Start 2P', cursive", color: 'black', fontSize: '2em'}}
-                      disabled={claimingNft ? 1 : 0}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        decrementMintAmount();
-                      }}
-                    >
-                      -
-                    </btn>
-                    <s.SpacerMedium />
-                    <s.TextDescription id="mint-amount"
-                      style={{
-                        fontSize: '2.3em',
-                        textAlign: "center",
-                        color: 'black', fontFamily: "'Press Start 2P', cursive",
-                      }}
-                    >
-                      {mintAmount}
-                    </s.TextDescription>
-                    <s.SpacerMedium />
-                    <btn className="round-button"
-                      style={{ fontFamily: "'Press Start 2P', cursive", color: 'black', fontSize: '2em' }}
-                      disabled={claimingNft ? 1 : 0}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        incrementMintAmount();
-                      }}
-                    >
-                      +
-                    </btn>
-                  </s.Container>
-                  <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                    <div className="pixel"
-                      disabled={claimingNft ? 1 : 0}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        claimNFTs();
-                        getData();
-                      }}
-                    >
-                      <p>MINT</p>
-                    </div>
-                  </s.Container>
-                </>
-              )}
-            </>
-          )}
-          </div>
-       </div>
+      <Phone>
+       
       </Phone>
     </div>
   );
@@ -321,7 +244,7 @@ justify-self: center;
 align-items: center; 
 height: 100vh;
 minWidth: 100%;
-background-image: url("/config/images/bg.gif");
+background-color: black;
 background-position: center center; 
 background-repeat: no-repeat;
 background-size: 100%; 

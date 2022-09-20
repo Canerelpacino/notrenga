@@ -124,8 +124,8 @@ table {
 }
 
 @font-face {
-  font-family: "Caribbean";
-  src: local("/src/styles/Turtles.otf"), url(Turtles.otf) format("opentype");
+  font-family: "Gemini";
+  src: local("/src/styles/Gemini.otf"), url(Gemini.otf) format("opentype");
 }
 
 body {
