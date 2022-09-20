@@ -1,13 +1,13 @@
 {
-  "CONTRACT_ADDRESS": "0xB9600ED89F561A97463ce10BA2E5AD2e4c3fAAE5",
-  "SCAN_LINK": "https://etherscan.io/address/0xb9600ed89f561a97463ce10ba2e5ad2e4c3faae5",
+  "CONTRACT_ADDRESS": "0xCE8F3BF797D587C0A6425028298fb9a45266a1e5",
+  "SCAN_LINK": "https://etherscan.io/address/0xce8f3bf797d587c0a6425028298fb9a45266a1e5",
   "NETWORK": {
     "NAME": "Ethereum",
     "SYMBOL": "ETH",
     "ID": 1
   },
-  "NFT_NAME": "Sskullss",
-  "SYMBOL": "SK",
+  "NFT_NAME": "NotRenga",
+  "SYMBOL": "NOTRENGA",
   "MAX_SUPPLY": 3500,
   "WEI_COST": 6000000000000000,
   "DISPLAY_COST": 0.006,

@@ -12,27 +12,38 @@ box-sizing: border-box;
 
 .mint {
   position: absolute;
-  top: 5vw;
-  left: 14vw;
-  transform: rotate(-1deg);
+  display: block;
+  color: white;
+  top: 25vh;
+  left: 0; 
+  right: 0; 
+  width: 195px;
+  margin-left: auto; 
+  margin-right: auto;
+
 }
 
 #connectbtn {
   position: absolute;
-  transform: rotate(-deg);
-  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  top: 30vh;
+  left: 0; 
+  right: 0; 
+  width: 280px;
+  margin-left: auto; 
+  margin-right: auto;
+  font-family: 'Gemini', cursive;
   color: white;
   cursor: pointer;
-  font-size: 1.7em;
-  left: 13vw;
-  top: 16vh;
+  font-size: 5em;
+
 }
 
 .soldout {
   position: absolute;
   transform: rotate(-deg);
-  font-family: 'Press Start 2P', cursive;
-  color: black;
+  font-family: 'Gemini', cursive;
+  color: white;
   opacity: 1;
   cursor: pointer;
   font-size: 1.9em;
@@ -40,33 +51,57 @@ box-sizing: border-box;
   top: 4vh;
 }
 
-@media (width: 1536px) {
-  .mint{
-    top: 2.7vw;
-    left: 13vw;
+.mintbtn {
+  font-family: 'Gemini', cursive;
+  color: white;
+  cursor: pointer;
+  font-size: 4em;
+}
+
+.twitter{
+  position: absolute; 
+  font-family: 'Gemini', cursive; 
+  color: white; 
+  font-size: 2em;
+  display: block;
+  color: white;
+  top: 3vh;
+  left: 0; 
+  right: 8vw; 
+  width: 100px;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.os{
+  position: absolute; 
+  font-family: 'Gemini', cursive; 
+  color: white; 
+  font-size: 2.1em;
+  display: block;
+  color: white;
+  top: 3vh;
+  left: 8vw; 
+  right: 0; 
+  width: 100px;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+@media (width: 1366px) {
+  .twitter {
+    right: 10vw;
   }
-  #connectbtn {
-    left: 11.5vw;
-  }
-  .soldout{
-    left: 1.3vw;
-    top: 7vh;
+  .os {
+    left: 10vw;
   }
 }
 
-
-@media (max-width: 1400px) {
-  .mint{
-    top: 2.1vw;
-    left: 12vw;
+@media (width: 1536px) {
+  .twitter {
+    right: 10vw;
   }
-  #connectbtn {
-    left: 11.5vw;
-    font-Size: 1.5em;
-  }
-  .soldout{
-    left: 1.6vw;
-    top: 8vh;
-    font-Size: 1.6em;
+  .os {
+    left: 10vw;
   }
 }

@@ -17,7 +17,7 @@ function App() {
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`THE MINT IS FREE! ANY EXTRA MINTS DO COST 0.0025 ETH.`);
+  const [feedback, setFeedback] = useState(``);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -47,7 +47,7 @@ function App() {
     setFeedback(`Have some patience...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .SSPAWNSSSSKULLSS(mintAmount)
+      .mint(mintAmount)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -113,7 +113,6 @@ function App() {
 
   const connected = () => {
     document.getElementById("connectbtn").style.display = "none";
-    document.getElementById("connectbtn2").style.display = "none";
   };
 
   return (
@@ -128,15 +127,15 @@ function App() {
         </div>
 
         <div style={{position: 'absolute', width: '100%', display: 'flex', bottom: 0, justifyContent: 'center'}}>
-          <img src="/config/images/renga.png" style={{width: '30%'}}></img>
+          <img src="/config/images/renga.png" style={{width: '25%'}}></img>
         </div>
 
         {/*Socials*/}
-        <a href="https://twitter.com/SSKULLSS_NFT" target="_blank">
-          <img src="/config/images/tw.png" style={{ width: '55px', position: 'fixed', top: '22px', right: '40px', zIndex: '10' }} className="tw"></img>
+        <a href="https://twitter.com/NotRenga" target="_blank">
+          <p className="twitter">Twitter</p>
         </a>
-        <a href="https://discord.gg/StaKnc5Y6v" target="_blank">
-          <img src="/config/images/dc.png" style={{ width: '65px', position: 'fixed', top: '20px', right: '110px', zIndex: '10' }} className="os"></img>
+        <a href="https://opensea.io/collection/not-renga-1" target="_blank">
+        <p className="os">Opensea</p>
         </a>
         <div id="connectbtn" style={{}}
           onClick={(e) => {
@@ -145,7 +144,7 @@ function App() {
             getData();
           }}
         >
-        <p>CONNECT</p>
+        CONNECT
         </div>
 
 
@@ -153,11 +152,11 @@ function App() {
         <div className="mint">
           {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
             <>
-              <s.TextTitle
-                className="soldout" style={{fontFamily: "'Press Start 2P', cursive"}}
+              <div
+                className="soldout" style={{fontFamily: "'Gemini', cursive", color: 'white', fontSize: '5em'}}
               >
                 SOLD OUT!
-              </s.TextTitle>
+              </div>
               <s.SpacerSmall />
             </>
           ) : (
@@ -181,7 +180,7 @@ function App() {
                   <s.SpacerMedium />
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
                     <btn id="roundbtn" className="round-button"
-                      style={{ fontFamily: "'Press Start 2P', cursive", color: 'white', fontSize: '2em'}}
+                      style={{ fontFamily: "'Gemini', cursive", color: 'white', fontSize: '5em', cursor: 'pointer'}}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -193,16 +192,16 @@ function App() {
                     <s.SpacerMedium />
                     <s.TextDescription id="mint-amount"
                       style={{
-                        fontSize: '2.3em',
+                        fontSize: '5em',
                         textAlign: "center",
-                        color: 'black', fontFamily: "'Press Start 2P', cursive",
+                        color: 'white', fontFamily: "'Gemini', cursive",
                       }}
                     >
                       {mintAmount}
                     </s.TextDescription>
                     <s.SpacerMedium />
                     <btn className="round-button"
-                      style={{ fontFamily: "'Press Start 2P', cursive", color: 'black', fontSize: '2em' }}
+                      style={{ fontFamily: "'Gemini', cursive", color: 'white', fontSize: '5em', cursor: 'pointer'}}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -213,7 +212,7 @@ function App() {
                     </btn>
                   </s.Container>
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                    <div className="pixel"
+                    <div className="mintbtn"
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -244,7 +243,7 @@ justify-self: center;
 align-items: center; 
 height: 100vh;
 minWidth: 100%;
-background-color: black;
+background-color: white;
 background-position: center center; 
 background-repeat: no-repeat;
 background-size: 100%; 
