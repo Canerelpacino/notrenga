@@ -1,16 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /*Home*/
-.home {
-display: flex; 
-flex-direction: column; 
-justify-self: center; 
-align-items: center; 
-text-align: center; 
-box-sizing: border-box;
+
+.home{
+  background-color: black;
+  display: flex; 
+  width: 100%; 
+  height: 100vh; 
+  flex-direction: row;
+}
+
+@media (max-width: 960px) {
+  .home{
+    display: none;
+  }
 }
 
 .mint {
+  position: absolute;
+  display: block;
+  color: white;
+  top: 25vh;
+  left: 0; 
+  right: 0; 
+  width: 195px;
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.mint2 {
   position: absolute;
   display: block;
   color: white;
@@ -24,6 +42,21 @@ box-sizing: border-box;
 }
 
 #connectbtn {
+  position: absolute;
+  display: flex;
+  top: 30vh;
+  left: 0; 
+  right: 0; 
+  width: 280px;
+  margin-left: auto; 
+  margin-right: auto;
+  font-family: 'Gemini', cursive;
+  color: white;
+  cursor: pointer;
+  font-size: 5em;
+}
+
+#connectbtn2 {
   position: absolute;
   display: flex;
   top: 30vh;

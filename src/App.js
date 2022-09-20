@@ -113,11 +113,12 @@ function App() {
 
   const connected = () => {
     document.getElementById("connectbtn").style.display = "none";
+    document.getElementById("connectbtn2").style.display = "none";
   };
 
   return (
     <div>
-      <div style={{backgroundColor: 'black', display: 'flex', width: '100%', height: '100vh', flexDirection: 'row'}}>
+      <div className="home">
 
         <div style={{display: 'flex', height: '100%', flex: '1', alignItems: 'center', justifyContent: 'left'}}>
           <img src="/config/images/renga1.png" style={{width: '90%', transform: 'rotate(-90deg) translate(0, -7vw)', margin: 'auto', marginLeft: 0}}></img>
@@ -142,6 +143,7 @@ function App() {
             e.preventDefault();
             dispatch(connect());
             getData();
+            connected();
           }}
         >
         CONNECT
@@ -229,8 +231,101 @@ function App() {
           )}
           </div>
       </div>
+
+
       <Phone>
-       
+      <div id="connectbtn2" style={{}}
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(connect());
+            getData();
+            connected();
+          }}
+        >
+        CONNECT
+        </div>
+
+
+        {/*Mint Section*/}
+        <div className="mint2">
+          {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+            <>
+              <div
+                className="soldout" style={{fontFamily: "'Gemini', cursive", color: 'white', fontSize: '5em'}}
+              >
+                SOLD OUT!
+              </div>
+              <s.SpacerSmall />
+            </>
+          ) : (
+            <>
+              <s.SpacerXSmall />
+              <s.SpacerSmall />
+              {blockchain.account === "" ||
+                blockchain.smartContract === null ? (
+                <s.Container ai={"center"} jc={"center"}>
+                  <s.SpacerSmall />
+
+                  {blockchain.errorMsg !== "" ? (
+                    <>
+                      <s.SpacerSmall />
+                    </>
+                  ) : null}
+                </s.Container>
+              ) : (
+                <>
+                  <div onLoad={connected()}></div>
+                  <s.SpacerMedium />
+                  <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                    <btn id="roundbtn" className="round-button"
+                      style={{ fontFamily: "'Gemini', cursive", color: 'white', fontSize: '5em', cursor: 'pointer'}}
+                      disabled={claimingNft ? 1 : 0}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        decrementMintAmount();
+                      }}
+                    >
+                      -
+                    </btn>
+                    <s.SpacerMedium />
+                    <s.TextDescription id="mint-amount"
+                      style={{
+                        fontSize: '5em',
+                        textAlign: "center",
+                        color: 'white', fontFamily: "'Gemini', cursive",
+                      }}
+                    >
+                      {mintAmount}
+                    </s.TextDescription>
+                    <s.SpacerMedium />
+                    <btn className="round-button"
+                      style={{ fontFamily: "'Gemini', cursive", color: 'white', fontSize: '5em', cursor: 'pointer'}}
+                      disabled={claimingNft ? 1 : 0}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        incrementMintAmount();
+                      }}
+                    >
+                      +
+                    </btn>
+                  </s.Container>
+                  <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                    <div className="mintbtn"
+                      disabled={claimingNft ? 1 : 0}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        claimNFTs();
+                        getData();
+                      }}
+                    >
+                      <p>MINT</p>
+                    </div>
+                  </s.Container>
+                </>
+              )}
+            </>
+          )}
+          </div>
       </Phone>
     </div>
   );
@@ -260,10 +355,7 @@ justify-self: center;
 align-items: center; 
 height: 100vh;
 minWidth: 100%;
-background-image: url("/config/images/bg.gif");
-background-position: center center; 
-background-repeat: no-repeat;
-background-size: 390%; 
+background-color: black; 
 text-align: center; 
 @media (orientation: landscape) {
   display: none;
