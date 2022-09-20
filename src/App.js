@@ -132,11 +132,11 @@ function App() {
         </div>
 
         {/*Socials*/}
-        <a href="https://twitter.com/NotRenga" target="_blank">
-          <p className="twitter">Twitter</p>
+        <a href="https://twitter.com/NotRenga " target="_blank">
+          <img src="/config/images/twitter.png" style={{ width: '7.1%', position: 'fixed', top: '0.6vh', right: '48.5vw', zIndex: '10' }} className="tw"></img>
         </a>
         <a href="https://opensea.io/collection/not-renga-1" target="_blank">
-        <p className="os">Opensea</p>
+          <img src="/config/images/os.png" style={{ width: '7%', position: 'fixed', top: '1vh', left: '6vw', zIndex: '10' }} className="os"></img>
         </a>
         <div id="connectbtn" style={{}}
           onClick={(e) => {
@@ -214,7 +214,7 @@ function App() {
                     </btn>
                   </s.Container>
                   <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                    <div className="mintbtn"
+                    <img className="mintbtn" src="/config/images/mint.png" style={{width: '120%'}}
                       disabled={claimingNft ? 1 : 0}
                       onClick={(e) => {
                         e.preventDefault();
@@ -222,8 +222,7 @@ function App() {
                         getData();
                       }}
                     >
-                      <p>MINT</p>
-                    </div>
+                    </img>
                   </s.Container>
                 </>
               )}
