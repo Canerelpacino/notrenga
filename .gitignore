@@ -13,7 +13,7 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Runtime data
 
-pids
+pidsz
 _.pid
 _.seed
 \*.pid.lock
