@@ -47,7 +47,7 @@ function App() {
     setFeedback(`Have some patience...`);
     setClaimingNft(true);
     blockchain.smartContract.methods
-      .whitelistMint(mintAmount)
+      .mint(mintAmount)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
